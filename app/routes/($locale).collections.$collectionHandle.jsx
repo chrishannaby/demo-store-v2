@@ -3,8 +3,8 @@ import {useLoaderData} from '@remix-run/react';
 import {
   flattenConnection,
   AnalyticsPageType,
-  Pagination__unstable as Pagination,
-  getPaginationVariables__unstable as getPaginationVariables,
+  Pagination as Pagination,
+  getPaginationVariables as getPaginationVariables,
 } from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 
