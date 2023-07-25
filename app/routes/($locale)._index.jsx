@@ -26,7 +26,6 @@ export async function loader({params, context}) {
   const {shop, hero} = await context.storefront.query(HOMEPAGE_SEO_QUERY, {
     variables: {handle: 'freestyle'},
   });
-
   const seo = seoPayload.home();
 
   return defer({
@@ -76,22 +75,59 @@ export async function loader({params, context}) {
 }
 
 export default function Homepage() {
-  const {
-    primaryHero,
-    secondaryHero,
-    tertiaryHero,
-    featuredCollections,
-    featuredProducts,
-  } = useLoaderData();
+  const {secondaryHero, tertiaryHero, featuredCollections, featuredProducts} =
+    useLoaderData();
 
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
 
   return (
     <>
-      {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
+      <a href="/collections/freestyle">
+        <section className="relative justify-end flex flex-col w-full -mt-nav h-screen">
+          <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
+            <div>
+              <img
+                alt=""
+                decoding="async"
+                height="126.2"
+                loading="eager"
+                sizes="(min-width: 48em) 50vw, 100vw"
+                src="/proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=100 height=126 crop=center"
+                srcSet="/proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=200 height=252 crop=center 200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=400 height=505 crop=center 400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=600 height=757 crop=center 600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=800 height=1010 crop=center 800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=1000 height=1262 crop=center 1000w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=1200 height=1514 crop=center 1200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=1400 height=1767 crop=center 1400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=1600 height=2019 crop=center 1600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=1800 height=2272 crop=center 1800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=2000 height=2524 crop=center 2000w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=2200 height=2776 crop=center 2200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=2400 height=3029 crop=center 2400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=2600 height=3281 crop=center 2600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=2800 height=3534 crop=center 2800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_1.webp?v=1690314293 width=3000 height=3786 crop=center 3000w"
+                width="100"
+                className="block object-cover w-full h-full"
+                style={{width: '100%', aspectRatio: '1000/1262'}}
+              />
+            </div>
+            <div className="hidden md:block">
+              <img
+                alt=""
+                decoding="async"
+                height="126.2"
+                loading="eager"
+                sizes="50vw"
+                src="/proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=100 height=126 crop=center"
+                srcSet="/proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=200 height=252 crop=center 200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=400 height=505 crop=center 400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=600 height=757 crop=center 600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=800 height=1010 crop=center 800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=1000 height=1262 crop=center 1000w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=1200 height=1514 crop=center 1200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=1400 height=1767 crop=center 1400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=1600 height=2019 crop=center 1600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=1800 height=2272 crop=center 1800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=2000 height=2524 crop=center 2000w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=2200 height=2776 crop=center 2200w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=2400 height=3029 crop=center 2400w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=2600 height=3281 crop=center 2600w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=2800 height=3534 crop=center 2800w, /proxy/s/files/1/0631/4727/8392/files/Hydrogen_Hero_Feature_2.webp?v=1690314303 width=3000 height=3786 crop=center 3000w"
+                width="100"
+                className="block object-cover w-full h-full"
+                style={{width: '100%', aspectRatio: '1000/1262'}}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
+            <h2 className="whitespace-pre-wrap font-bold text-display max-w-md">
+              All Mountain All&nbsp;Season
+            </h2>
+            <p className="max-w-prose-narrow whitespace-pre-wrap inherit text-lead font-medium">
+              The All New Hydrogen Snowboard Exclusively From&nbsp;Shopify
+            </p>
+            <span className="max-w-prose whitespace-pre-wrap inherit text-lead font-medium">
+              Shop Now
+            </span>
+          </div>
+        </section>
+      </a>
 
       {featuredProducts && (
         <Suspense>

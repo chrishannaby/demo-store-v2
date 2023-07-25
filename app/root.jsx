@@ -20,13 +20,15 @@ import favicon from '../public/favicon.svg';
 
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
-import styles from './styles/app.css';
 import {DEFAULT_LOCALE, parseMenu, getCartId} from './lib/utils';
 import {useAnalytics} from './hooks/useAnalytics';
 
 export const links = () => {
   return [
-    {rel: 'stylesheet', href: styles},
+    {
+      rel: 'stylesheet',
+      href: '/proxy/oxygen/63147278392/1000001186/a6x4ensr1/build/_assets/app-I33HS2VC.css',
+    },
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
