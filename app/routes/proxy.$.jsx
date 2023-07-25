@@ -9,9 +9,7 @@ export async function loader({request}) {
     headers: request.headers,
   });
 
-  const data = await proxyResponse.text();
-
-  return new Response(data, {
+  return new Response(proxyResponse.body, {
     status: proxyResponse.status,
     headers: new Headers(proxyResponse.headers),
   });
